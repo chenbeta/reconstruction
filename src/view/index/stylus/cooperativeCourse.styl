@@ -1,0 +1,99 @@
+  @import '../../../style/vars.styl';
+  $img-box-height = 179px;
+  .home-list-tilte{
+    font-size: 36px;
+    color: #33395b;
+    text-align: center;
+  }
+  .home-list{
+    fieldset{
+      margin: 10px 0 20px;
+      border: none;
+      border-top: 1px solid #e2e2e2;
+      padding: 0;
+      legend{
+        margin: 0 auto;
+        padding: 0 10px;
+        font-size: 20px;
+        font-weight: 300;
+        color: #33395b;
+      }
+    }
+  }
+  .home-course-box{
+    .home-curse-item{
+      margin: 0 52px 20px 0;
+      border: 1px solid #f0f0f0;
+      display :inline-block;
+      width :259px;
+      height :294px;
+      &:nth-child(4n+0){
+        margin-right :0;
+      }
+      &:hover{
+        box-shadow: 0px 0px 15px rgba(45, 50, 22, 0.2);
+        .course-pic img{
+            transform :scale(1.2);
+        }
+        .video-shadow{
+          opacity :1;
+        }
+        .explain-title{
+          color :$theme-color;
+        }
+      }
+    }
+    .course-pic{
+      width :100%;
+      height :$img-box-height;
+      position :relative;
+      img{
+        transition: all ease-in-out 0.5s;
+        transform-origin: center;
+        width :100%;
+        height :100%;
+      }
+      .video-shadow{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align :center;
+        opacity :0;
+        transition: all ease-in-out 0.5s;
+        line-height :$img-box-height;
+        color :$theme-color;
+        font-size :60px;
+      }
+    }
+    .home-course-explain{
+      .explain-title{
+          font-size: 16px;
+          word-wrap: normal;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          text-align: center;
+          color :#333;
+          padding:30px 0 15px 0;
+      }
+      .explain-bottom{
+          font-size 14px;
+          padding :0 16px;
+          .f-l{
+            color :#c5c5c5;
+          }
+          .text{
+            margin-left :10px;
+          }
+          .text-btn{
+            line-height: 23px;
+            text-align: center;
+            background :$theme-color;
+            color: $theme-btn-color;
+            padding :0 10px;
+          }
+      }
+    }
+  }

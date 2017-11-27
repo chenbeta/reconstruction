@@ -1,0 +1,66 @@
+@import '../../../style/vars.styl';
+
+$tab-height = 68px; 
+$ico-w-h = 50px;
+$input-color = #e5e5e5;
+
+.tab-header
+    height :$tab-height;
+    .tab-option
+        cursor :pointer;
+        height :100%;
+        width :50%;
+        text-align :center;
+        font-size: 24px;
+        line-height :$tab-height;
+        color: #FFF;
+        background: rgba(41, 45, 56, 0.8);
+        &.tab-option-active
+            color :#e5e5e5;
+            background :transparent;
+
+.tab-content
+    padding: 30px 30px 0;
+    .form-item
+        position: relative;
+        margin-bottom: 15px;
+        .form-item-input
+            text-indent:5px;
+            height :34px;
+            border :1px solid $input-color;
+            font-size :14px;
+            width :100%;
+        .login-btn
+                width :100%;
+                height :$ico-w-h;
+                color :$theme-btn-color;
+                background-color :$theme-color;
+                font-size :18px;
+
+.tab-content-login
+    .required-element
+        font-size: 12px;
+        color: #838488;
+        margin-bottom: 16px;
+    .form-item
+        margin-bottom: 15px;
+        .ico-box
+           width :$ico-w-h;
+           height :$ico-w-h;
+           vertical-align: top;
+           text-align :center;
+           display :inline-block;
+           background :#fff;
+           border :1px solid $input-color;
+           color :$input-color;
+           font-size 22px;
+           line-height :$ico-w-h;
+        .form-item-input
+            height: $ico-w-h;
+            border-left :0;
+            width: calc(100% - 54px);
+        .login-btn
+            margin-top: 20px;
+    .option-btn
+        color: #acacac;
+        font-size :14px;

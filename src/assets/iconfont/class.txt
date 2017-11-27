@@ -1,0 +1,6 @@
+[class*=" el-icon-it"], [class^=el-icon-it]{
+  font-family:"iconfont" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
