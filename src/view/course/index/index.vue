@@ -7,7 +7,7 @@
               </div>
               <div class="classify-content f-r">
                   <span class="classify-item f-l on">全部</span>
-                  <span class="classify-item f-l" v-for="item in classify" :key="item.id" @click="filtrateClick(true, item.id)">
+                  <span class="classify-item f-l" v-for="item in classify" :key="item.id">
                       {{item.name}}
                   </span>
               </div>
@@ -23,33 +23,18 @@
               </div>
           </div>
       </div>
-      <course-box :data = 'CourseData.items'/>
   </div>
 </template>
 
 <script>
-import courseBox from './list-item-box.vue';
 export default {
-    components: {
-        courseBox
-    },
     data () {
         return {
-            classify: [],
-            queryParameter: {
-                pageNumber: 1,
-                pageSize: 16,
-                sort: '',
-                categoryId: ''
-            },
-            CourseData: {
-                items: []
-            }
+            classify: []
         };
     },
     created () {
         this.getData();
-        this.getCourseData();
     },
     methods: {
         getData () {
@@ -57,24 +42,7 @@ export default {
                 .then(res => {
                     this.classify = res.resultObject;
                 });
-        },
-        getCourseData () {
-            this.http({type: 'POST', url: 'bxg_anon/course/courseList', params: this.queryParameter})
-                .then(res => {
-                    if (res.success) {
-                        this.CourseData = res.resultObject;
-                    }
-                });
-        },
-        filtrateClick (type, val) {
-            if (type) {
-                this.queryParameter.categoryId = val;
-            } else {
-                this.queryParameter.sort = val;
-            }
-            this.getCourseData();
         }
-
     }
 };
 </script>
