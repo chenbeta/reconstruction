@@ -12,43 +12,43 @@
 import listItem from './list-item';
 
 export default {
-    props: {
-        type: {
-            type: String,
-            required: true
-        }
-    },
-    components: {
-        listItem
-    },
-    data () {
-        return {
-            itemsData: {},
-            queryParameter: {
-                type: 1,
-                pageNumber: 1,
-                pageSize: 12
-            }
-        };
-    },
-    created () {
-        this.getData();
-    },
-    methods: {
-        getData () {
-            this.queryParameter.type = this.type;
-            this.queryParameter.pageSize = this.type === '1' ? 11 : 12;
-            this.http({url: 'bxg/teaching/squad/list', params: this.queryParameter})
-                .then(res => {
-                    if (res.success) {
-                        this.itemsData = res.resultObject;
-                    }
-                });
-        },
-        handleCurrentChange (val) {
-            this.queryParameter.pageNumber = val;
-            this.getData();
-        }
+  props: {
+    type: {
+      type: String,
+      required: true
     }
+  },
+  components: {
+    listItem
+  },
+  data () {
+    return {
+      itemsData: {},
+      queryParameter: {
+        type: 1,
+        pageNumber: 1,
+        pageSize: 12
+      }
+    };
+  },
+  created () {
+    this.getData();
+  },
+  methods: {
+    getData () {
+      this.queryParameter.type = this.type;
+      this.queryParameter.pageSize = this.type === '1' ? 11 : 12;
+      this.http({ url: 'bxg/teaching/squad/list', params: this.queryParameter })
+        .then(res => {
+          if (res.success) {
+            this.itemsData = res.resultObject;
+          }
+        });
+    },
+    handleCurrentChange (val) {
+      this.queryParameter.pageNumber = val;
+      this.getData();
+    }
+  }
 };
 </script>

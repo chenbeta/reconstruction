@@ -35,25 +35,25 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-    name: 'headerBox',
-    computed: {
-        ...mapGetters([
-            'getUserData',
-            'getLoginSuccess'
-        ])
-    },
-    created () {
-        this.setUserData();
-    },
-    methods: {
-        ...mapActions([
-            'setUserData'
-        ])
-    }
+  name: 'headerBox',
+  computed: {
+    ...mapGetters([
+      'getUserData',
+      'getLoginSuccess'
+    ])
+  },
+  created () {
+    this.setUserData();
+  },
+  methods: {
+    ...mapActions([
+      'setUserData'
+    ])
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
-    @import '../style/header.styl';
+@import '../style/header.styl';
 </style>
 

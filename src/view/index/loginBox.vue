@@ -69,60 +69,60 @@ import Qs from 'qs';
 import { mapActions } from 'vuex';
 
 export default {
-    data () {
-        return {
-            showLogin: true,
-            loginData: {
-                username: '13581932394',
-                password: '123456'
-            },
-            verifyImg: ''
-        };
-    },
-    created () {
-        this.setUserData();
-        this.verifyImg = this.getImgCode();
-    },
-    methods: {
-        ...mapActions([
-            'setUserData'
-        ]),
-        validateLoginForm () {
-            this.$validator.validateAll('login-form').then((result) => {
-                if (result) {
-                    this.axios.post(URL + '/login', Qs.stringify(this.loginData)).then(res => {
-                        let resData = res.data;
-                        console.log(res.data);
-                        resData = {
-                            'success': true,
-                            'errorMessage': '',
-                            'resultObject': null,
-                            'code': null
-                        };
-                        if (resData.success) {
-                            this.setUserData();
-                            this.$router.push({name: 'user-msg'});
-                        } else {
-                            this.$message.error(resData.errorMessage);
-                        }
-                    });
-                }
-            });
-        },
-        validateRegisterForm () {
-            this.verifyImg = this.getImgCode();
-            console.log(this.verifyImg);
-            this.$validator.validateAll('login-form').then((result) => {
-                // console.log(result);
-            });
-        },
-        getImgCode () {
-            return 'http://yuanxiao.boxuegu.com/bxg_anon/common/vcode?_t=' + Math.random() * new Date();
+  data () {
+    return {
+      showLogin: true,
+      loginData: {
+        username: '13581932394',
+        password: '123456'
+      },
+      verifyImg: ''
+    };
+  },
+  created () {
+    this.setUserData();
+    this.verifyImg = this.getImgCode();
+  },
+  methods: {
+    ...mapActions([
+      'setUserData'
+    ]),
+    validateLoginForm () {
+      this.$validator.validateAll('login-form').then((result) => {
+        if (result) {
+          this.axios.post(URL + '/login', Qs.stringify(this.loginData)).then(res => {
+            let resData = res.data;
+            console.log(res.data);
+            resData = {
+              'success': true,
+              'errorMessage': '',
+              'resultObject': null,
+              'code': null
+            };
+            if (resData.success) {
+              this.setUserData();
+              this.$router.push({ name: 'user-msg' });
+            } else {
+              this.$message.error(resData.errorMessage);
+            }
+          });
         }
+      });
+    },
+    validateRegisterForm () {
+      this.verifyImg = this.getImgCode();
+      console.log(this.verifyImg);
+      this.$validator.validateAll('login-form').then((result) => {
+        // console.log(result);
+      });
+    },
+    getImgCode () {
+      return 'http://yuanxiao.boxuegu.com/bxg_anon/common/vcode?_t=' + Math.random() * new Date();
     }
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
-    @import 'stylus/loginBox.styl';
+@import 'stylus/loginBox.styl';
 </style>

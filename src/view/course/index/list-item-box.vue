@@ -8,20 +8,23 @@
 import item from './list-item.vue';
 
 export default {
-    components: {
-        item
-    },
-    props: {
-        data: {
-            type: Array
-        }
+  components: {
+    item
+  },
+  props: {
+    data: {
+      type: Array
     }
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
-    .item
-        margin 0 30px 20px 0
-        &:nth-child(4n+0)
-            margin-right 0
+.item {
+  margin: 0 30px 20px 0;
+
+  &:nth-child(4n+0) {
+    margin-right: 0;
+  }
+}
 </style>

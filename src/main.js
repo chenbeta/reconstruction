@@ -3,7 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import axios, {http } from '@/util/http';
+import axios, { http } from '@/util/http';
 import ElementUI from 'element-ui';
 
 import VeeValidate from '@/util/validate.js';
@@ -16,7 +16,7 @@ import '@/assets/iconfont/iconfont.css';
 import 'normalize.css';
 
 Vue.use(ElementUI);
-Vue.use(VeeValidate, {locale: 'zh_CN'});
+Vue.use(VeeValidate, { locale: 'zh_CN' });
 
 Vue.config.productionTip = false;
 Vue.prototype.http = http;
@@ -24,9 +24,9 @@ Vue.prototype.axios = axios;
 
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router,
-    store,
-    template: '<App/>',
-    components: { App }
+  el: '#app',
+  router,
+  store,
+  template: '<App/>',
+  components: { App }
 });

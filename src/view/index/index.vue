@@ -24,42 +24,41 @@ import courseBox from './cooperativeCourse.vue';
 import loginBox from './loginBox.vue';
 
 export default {
-    components: {
-        courseBox, loginBox
-    },
-    data () {
-        return {
-            banner: []
-        };
-    },
-    created () {
-        this.getBanner();
-    },
-    methods: {
-        getBanner () {
-            this.http({method: 'GET', url: 'bxg_anon/home/banner'}).then(res => {
-                this.banner = res.resultObject;
-            });
-        }
+  components: {
+    courseBox,
+    loginBox
+  },
+  data() {
+    return {
+      banner: []
+    };
+  },
+  created() {
+    this.getBanner();
+  },
+  methods: {
+    getBanner() {
+      this.http({ method: 'GET', url: 'bxg_anon/home/banner' }).then(res => {
+        this.banner = res.resultObject;
+      });
     }
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
-  .banner-box{
-    position relative;
-  }
-  .login-reg-box{
-    position: absolute;
-    width: 376px;
-    height: 450px;
-    right: 107px;
-    top: 30px;
-    background: rgba(41, 47, 73, 0.5);
-    border-radius: 6px;
-    z-index: 10;
-    overflow: hidden;
-  }
+.banner-box
+  position relative
+.login-reg-box
+  position absolute
+  width 376px
+  height 450px
+  right 107px
+  top 30px
+  background rgba(41, 47, 73, 0.5)
+  border-radius 6px
+  z-index 10
+  overflow hidden
 </style>
 
 

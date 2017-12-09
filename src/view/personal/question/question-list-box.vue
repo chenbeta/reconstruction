@@ -18,51 +18,50 @@
 
 <script>
 export default {
-    props: {
-        url: {
-            type: String,
-            required: true
-        }
-    },
-    data () {
-        return {
-            itemsData: {},
-            queryParameter: {
-                title: '',
-                status: null,
-                pageNumber: 1,
-                pageSize: 8,
-                url: ''
-            }
-        };
-    },
-    created () {
-        this.getData();
-    },
-    methods: {
-        getData () {
-            this.queryParameter.url = this.url;
-            this.axios.get('http://yuanxiao.boxuegu.com/api/call', {params: this.queryParameter}).then(res => {
-                let resData = res.data;
-                if (resData.success) {
-                    this.itemsData = resData.resultObject;
-                }
-            });
-            // this.http({url: this.url, params: this.queryParameter})
-            //     .then(res => {
-            //         if (res.success) {
-            //             this.itemsData = res.resultObject;
-            //         }
-            //     });
-        },
-        handleCurrentChange (val) {
-            this.queryParameter.pageNumber = val;
-            this.getData();
-        }
+  props: {
+    url: {
+      type: String,
+      required: true
     }
+  },
+  data() {
+    return {
+      itemsData: {},
+      queryParameter: {
+        title: '',
+        status: null,
+        pageNumber: 1,
+        pageSize: 8,
+        url: ''
+      }
+    };
+  },
+  created() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      this.queryParameter.url = this.url;
+      this.axios.get('http://yuanxiao.boxuegu.com/api/call', { params: this.queryParameter }).then(res => {
+        let resData = res.data;
+        if (resData.success) {
+          this.itemsData = resData.resultObject;
+        }
+      });
+      // this.http({url: this.url, params: this.queryParameter})
+      //     .then(res => {
+      //         if (res.success) {
+      //             this.itemsData = res.resultObject;
+      //         }
+      //     });
+    },
+    handleCurrentChange(val) {
+      this.queryParameter.pageNumber = val;
+      this.getData();
+    }
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
-
 </style>

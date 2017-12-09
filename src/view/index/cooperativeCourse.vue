@@ -29,26 +29,26 @@
 
 <script>
 export default {
-    data () {
-        return {
-            Data: []
-        };
-    },
-    created () {
-        this.getData();
-    },
-    methods: {
-        getData () {
-            this.http({url: 'bxg_anon/home/topCourse'}).then(res => {
-                if (res.success) {
-                    this.Data = res.resultObject;
-                }
-            });
+  data() {
+    return {
+      Data: []
+    };
+  },
+  created() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      this.http({ url: 'bxg_anon/home/topCourse' }).then(res => {
+        if (res.success) {
+          this.Data = res.resultObject;
         }
+      });
     }
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
- @import 'stylus/cooperativeCourse.styl';
+@import 'stylus/cooperativeCourse.styl';
 </style>

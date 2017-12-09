@@ -14,15 +14,15 @@
 
 <script>
 export default {
-    data () {
-        return {
-            form: {
-                nick_name: '',
-                login_name: '',
-                email: '',
-                qq: ''
-            }
-        };
-    }
+  data() {
+    return {
+      form: {
+        nick_name: '',
+        login_name: '',
+        email: '',
+        qq: ''
+      }
+    };
+  }
 };
 </script>

@@ -32,106 +32,100 @@
 
 <script>
 export default {
-    props: {
-        data: {
-            type: Object
-        },
-        itemTpye: {
-            type: String
-        },
-        create: {
-            type: Boolean,
-            default: false
-        }
+  props: {
+    data: {
+      type: Object
+    },
+    itemTpye: {
+      type: String
+    },
+    create: {
+      type: Boolean,
+      default: false
     }
+  }
 };
 </script>
 
 
 <style lang="stylus" scoped>
-    @import "~style/vars"
-
-    .classroom-item
-        position relative
-        width 303px
-        height 134px
-        background-color #fbfbfb
-        transition .2s
-        box-shadow 0 2px 2px #ccc
-        padding 24px 23px 0 23px
-        cursor pointer
-        display inline-block
-        vertical-align top
-        margin 0 30px 30px 0
-        &:nth-child(3n)
-            margin 0
-        &:hover
-            transform translate(0, -2px)
-            box-shadow 0 5px 5px #ccc
-            background-color #f1f3f2
-            .hover-box
-                display block
-            .show-box
-                display none
-            .classroom-title
-                font-weight bold
-
-        .classroom-header-box
-            line-height 25px  
-            font-size 18px
-            margin-bottom 28px
-            .classroom-title
-                width 210px
-                display inline-block
-            i 
-                padding 0 1px
-                &:hover
-                    color $theme-color
-
-        .panel-ico
-            font-size 16px
-            margin-right 10px
-
-        .doing-box,.end-box,.hover-box
-            font-size 12px
-            color #333
-            line-height 20px
-        .hover-box
-            display none
-
-        .matter
-            color #da1920
-            font-weight bold
-        .mark-box
-            position absolute
-            left -5px
-            top -1px
-            width 30px
-            font-weight 600
-            padding-top 8px
-            text-align center
-            transform rotate(-45deg)
-            color #fff
-            font-size 12px
-            &:before
-                content ' '
-                position absolute
-                width 0
-                height 0
-                top -3px
-                left -16px
-                border-left 32px solid transparent
-                border-right 32px solid transparent
-                border-bottom 32px solid #c1c0c0
-                z-index -1
-            &.new:before
-                border-bottom-color #da1920
-
-        .create-classroom-box
-            color $theme-color
-            font-size 18px
-            text-align center
-            i
-                font-size 40px
-                margin-bottom 10px
+@import '~style/vars'
+.classroom-item
+  position relative
+  width 303px
+  height 134px
+  background-color #fbfbfb
+  transition 0.2s
+  box-shadow 0 2px 2px #ccc
+  padding 24px 23px 0 23px
+  cursor pointer
+  display inline-block
+  vertical-align top
+  margin 0 30px 30px 0
+  &:nth-child(3n)
+    margin 0
+  &:hover
+    transform translate(0, -2px)
+    box-shadow 0 5px 5px #ccc
+    background-color #f1f3f2
+    .hover-box
+      display block
+    .show-box
+      display none
+    .classroom-title
+      font-weight bold
+  .classroom-header-box
+    line-height 25px
+    font-size 18px
+    margin-bottom 28px
+    .classroom-title
+      width 210px
+      display inline-block
+    i
+      padding 0 1px
+      &:hover
+        color $theme-color
+  .panel-ico
+    font-size 16px
+    margin-right 10px
+  .doing-box, .end-box, .hover-box
+    font-size 12px
+    color #333
+    line-height 20px
+  .hover-box
+    display none
+  .matter
+    color #da1920
+    font-weight bold
+  .mark-box
+    position absolute
+    left -5px
+    top -1px
+    width 30px
+    font-weight 600
+    padding-top 8px
+    text-align center
+    transform rotate(-45deg)
+    color #fff
+    font-size 12px
+    &:before
+      content ' '
+      position absolute
+      width 0
+      height 0
+      top -3px
+      left -16px
+      border-left 32px solid transparent
+      border-right 32px solid transparent
+      border-bottom 32px solid #c1c0c0
+      z-index -1
+    &.new:before
+      border-bottom-color #da1920
+  .create-classroom-box
+    color $theme-color
+    font-size 18px
+    text-align center
+    i
+      font-size 40px
+      margin-bottom 10px
 </style>

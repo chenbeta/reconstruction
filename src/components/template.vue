@@ -11,9 +11,9 @@ import headerBox from './header';
 import footerBox from './footer';
 
 export default {
-    components: {
-        headerBox,
-        footerBox
-    }
+  components: {
+    headerBox,
+    footerBox
+  }
 };
 </script>

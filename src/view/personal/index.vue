@@ -26,14 +26,12 @@
 import { mapGetters } from 'vuex';
 
 export default {
-    computed: {
-        ...mapGetters([
-            'getUserData'
-        ])
-    }
+  computed: {
+    ...mapGetters(['getUserData'])
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
-    @import 'index.styl';
+@import 'index.styl'
 </style>

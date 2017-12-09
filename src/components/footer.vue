@@ -14,24 +14,20 @@
 </template>
 
 <style lang="stylus" scoped>
-    @import '../style/vars.styl';
-    .footer{
-        height: 220px;
-        background-image: url(../assets/img/sy_footer_bj.png);
-        .footer-content-box{
-            width: $limit-width;
-            margin: auto;
-            text-align: center;
-            color: #bbb;
-            font-size: 14px;
-            padding-top: 46px;
-            .footer-top{
-                margin: 20px 0 24px 0;
-            }
-        }
-        .footer-logo{
-            background: url(../assets/img/sy_LOGO.png) no-repeat;;
-            height: 36px;
-        }
-    }
+@import '../style/vars.styl'
+.footer
+  height 220px
+  background-image url('../assets/img/sy_footer_bj.png')
+  .footer-content-box
+    width $limit-width
+    margin auto
+    text-align center
+    color #bbb
+    font-size 14px
+    padding-top 46px
+    .footer-top
+      margin 20px 0 24px 0
+  .footer-logo
+    background url('../assets/img/sy_LOGO.png') no-repeat
+    height 36px
 </style>

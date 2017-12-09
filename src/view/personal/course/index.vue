@@ -16,9 +16,10 @@ import courseItem from './course-item.vue';
 import courseItemBox from './course-item-box.vue';
 
 export default {
-    components: {
-        courseItem, courseItemBox
-    }
+  components: {
+    courseItem,
+    courseItemBox
+  }
 };
 </script>
 

@@ -30,45 +30,42 @@
 
 <script>
 export default {
-    data () {
-        return {
-            value: '',
-            queryParameter: {
-                type: '',
-                pageNumber: 1,
-                pageSize: 10
-            },
-            msgData: {
-
-            },
-            checkedCities: []
-        };
-    },
-    created () {
-        this.getData();
-    },
-    methods: {
-        getData () {
-            this.http({url: 'bxg/user/msg', params: this.queryParameter})
-                .then(res => {
-                    if (res.success) {
-                        this.msgData = res.resultObject;
-                    }
-                });
+  data() {
+    return {
+      value: '',
+      queryParameter: {
+        type: '',
+        pageNumber: 1,
+        pageSize: 10
+      },
+      msgData: {},
+      checkedCities: []
+    };
+  },
+  created() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      this.http({ url: 'bxg/user/msg', params: this.queryParameter }).then(res => {
+        if (res.success) {
+          this.msgData = res.resultObject;
         }
+      });
     }
+  }
 };
 </script>
 <style lang="stylus" scoped>
-    .msg-item
-        height :75px;
-        line-height :75px;
-        border-bottom: 1px solid #f0f0f0;
-        color: #737373;
-        .msg-type 
-            padding :0 10px;
-        .f-r
-            color: #333;
-        .apply-msg
-            color: #36b774;
+.msg-item
+  height 75px
+  line-height 75px
+  border-bottom 1px solid #f0f0f0
+  color #737373
+  .msg-type
+    padding 0 10px
+  .f-r
+    color #333
+  .apply-msg
+    color #36b774
 </style>
