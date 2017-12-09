@@ -20,6 +20,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~style/vars'
+
 .course-item
   width 277px
   height 255px

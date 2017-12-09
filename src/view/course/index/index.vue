@@ -33,7 +33,7 @@ export default {
   components: {
     courseBox
   },
-  data () {
+  data() {
     return {
       classify: [],
       queryParameter: {
@@ -47,28 +47,24 @@ export default {
       }
     };
   },
-  created () {
+  created() {
     this.getData();
     this.getCourseData();
   },
   methods: {
-    getData () {
+    getData() {
       this.http({ url: 'bxg_anon/course/categoryList' }).then(res => {
         this.classify = res.resultObject;
       });
     },
-    getCourseData () {
-      this.http({
-        type: 'POST',
-        url: 'bxg_anon/course/courseList',
-        params: this.queryParameter
-      }).then(res => {
+    getCourseData() {
+      this.http({ type: 'POST', url: 'bxg_anon/course/courseList', params: this.queryParameter }).then(res => {
         if (res.success) {
           this.CourseData = res.resultObject;
         }
       });
     },
-    filtrateClick (type, val) {
+    filtrateClick(type, val) {
       if (type) {
         this.queryParameter.categoryId = val;
       } else {
@@ -82,46 +78,34 @@ export default {
 
 
 <style lang="stylus" scoped>
-@import '~style/vars';
+@import '~style/vars'
 
-$classify-height = 55px;
+$classify-height = 55px
 
-.screen-box {
-  padding: 0 20px;
-  margin: 50px 0 30px 0;
-  background: #fff;
-  font-size: 16px;
-
-  .classify-box {
-    overflow: hidden;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .classify-title {
-    height: $classify-height;
-    line-height: $classify-height;
-    color: #999;
-
-    &:after {
-      content: ':';
-    }
-  }
-
-  .classify-content {
-    width: 1060px;
-
-    .classify-item {
-      line-height: $classify-height;
-      display: inline-block;
-      color: #333;
-      min-width: 80px;
-      margin-right: 40px;
-      cursor: pointer;
-
-      &:hover, &.on {
-        color: $theme-color;
-      }
-    }
-  }
-}
+.screen-box
+  padding 0 20px
+  margin 50px 0 30px 0
+  background #fff
+  font-size 16px
+  .classify-box
+    overflow hidden
+    border-bottom 1px solid #f0f0f0
+  .classify-title
+    height $classify-height
+    line-height $classify-height
+    color #999
+    &:after
+      content ':'
+  .classify-content
+    width 1060px
+    .classify-item
+      line-height $classify-height
+      display inline-block
+      color #333
+      min-width 80px
+      margin-right 40px
+      cursor pointer
+      &:hover,
+      &.on
+        color $theme-color
 </style>
